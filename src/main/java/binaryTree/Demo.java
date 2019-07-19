@@ -1,11 +1,19 @@
 package binaryTree;
 
+import symmetricalBinaryTree.SymmetricalBinaryTree;
+
 public class Demo {
     public static void main(String[] args) {
         Demo demo = new Demo();
         Tree tree = demo.buildTree();
-        demo.preOrderPrint(tree.root);
-        System.out.println(tree.completeTree());
+        Tree tree1 = new Tree();
+        Node node = new Node(1);
+        tree1.root = node;
+        if (tree.root == null){
+            System.out.println(true);
+        }else {
+            System.out.println(SymmetricalBinaryTree.ifSymmetricalBinaryTree(tree1.root.left, tree1.root.right));
+        }
     }
 
     /*
@@ -40,18 +48,18 @@ public class Demo {
         node = new Node(8);
         node1.left.left= node;
         node.parent = node1.left;
-        node = new Node(9);
-        node1.left.right = node;
-        node.parent = node1.left;
+//        node = new Node(9);
+//        node1.left.right = node;
+//        node.parent = node1.left;
         node = new Node(10);
-        node1.right.left = node;
-        node.parent = node1.left;
+        node2.right.right = node;
+        node.parent = node2.right;
         return tree;
     }
 
     public void preOrderPrint(Node cur){
         if (cur != null) {
-            System.out.print(" " + cur.index);
+            System.out.print(" " + cur.id);
             preOrderPrint(cur.left);
             preOrderPrint(cur.right);
         }

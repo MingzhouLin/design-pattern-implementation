@@ -9,11 +9,7 @@ public class Demo {
         Tree tree1 = new Tree();
         Node node = new Node(1);
         tree1.root = node;
-        if (tree.root == null){
-            System.out.println(true);
-        }else {
-            System.out.println(SymmetricalBinaryTree.ifSymmetricalBinaryTree(tree1.root.left, tree1.root.right));
-        }
+        System.out.println(tree1.getDepth());
     }
 
     /*

@@ -9,7 +9,7 @@ public class Demo {
         Tree tree1 = new Tree();
         Node node = new Node(1);
         tree1.root = node;
-        System.out.println(tree.ifBalanceBinaryTree(tree.root, new int[1]));;
+        System.out.println(tree1.getDepth());
     }
 
     /*
@@ -48,8 +48,8 @@ public class Demo {
 //        node1.left.right = node;
 //        node.parent = node1.left;
         node = new Node(10);
-        node1.left.left.left= node;
-        node.parent = node1.left.left;
+        node2.right.right = node;
+        node.parent = node2.right;
         return tree;
     }
 

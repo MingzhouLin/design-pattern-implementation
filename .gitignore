@@ -1,3 +1,5 @@
 .idea/
+target/classes/binaryTree/Tree.class
 design-pattern-implementation.iml
 out/
+

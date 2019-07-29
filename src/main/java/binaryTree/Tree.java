@@ -4,6 +4,24 @@ import java.util.*;
 
 public class Tree {
     Node root;
+
+    public int getDepth(){
+        int depth = 0;
+        return recursiveDepth(root, depth);
+    }
+
+    private int recursiveDepth(Node node, int depth){
+        if (node == null){
+            return depth;
+        }else {
+            return max(recursiveDepth(node.left, depth+1), recursiveDepth(node.right, depth+1));
+        }
+    }
+
+    private int max(int par1, int par2){
+        return par1 > par2 ? par1 : par2;
+    }
+
     public boolean completeTree(){
         Queue<Node> queue = new LinkedList<>();
         ((LinkedList<Node>) queue).add(root);

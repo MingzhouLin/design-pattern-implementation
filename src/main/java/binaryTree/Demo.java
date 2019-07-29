@@ -9,11 +9,7 @@ public class Demo {
         Tree tree1 = new Tree();
         Node node = new Node(1);
         tree1.root = node;
-        if (tree.root == null){
-            System.out.println(true);
-        }else {
-            System.out.println(SymmetricalBinaryTree.ifSymmetricalBinaryTree(tree1.root.left, tree1.root.right));
-        }
+        System.out.println(tree.ifBalanceBinaryTree(tree.root, new int[1]));;
     }
 
     /*
@@ -52,8 +48,8 @@ public class Demo {
 //        node1.left.right = node;
 //        node.parent = node1.left;
         node = new Node(10);
-        node2.right.right = node;
-        node.parent = node2.right;
+        node1.left.left.left= node;
+        node.parent = node1.left.left;
         return tree;
     }
 

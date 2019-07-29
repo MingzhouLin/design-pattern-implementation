@@ -4,7 +4,6 @@ import java.util.*;
 
 public class Tree {
     Node root;
-
     public boolean completeTree(){
         Queue<Node> queue = new LinkedList<>();
         ((LinkedList<Node>) queue).add(root);
@@ -31,6 +30,23 @@ public class Tree {
             }
         }
         return true;
+    }
+
+    public boolean ifBalanceBinaryTree(Node node, int[] depth){
+        if (node == null){
+            depth[0] = 0;
+            return true;
+        }
+        int[] left = new int[1];
+        int[] right = new int[1];
+        if (ifBalanceBinaryTree(node.left, left) && ifBalanceBinaryTree(node.right, right)){
+           if (left[0]-right[0] <= 1 && left[0]-right[0] >= -1){
+               depth[0] = 1 + (left[0] > right[0]? left[0] : right[0]);
+               return true;
+           }
+           return false;
+        }
+        return false;
     }
 
     public void printAccrodingToLevel(){

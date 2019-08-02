@@ -3,13 +3,10 @@ package binaryTree;
 import symmetricalBinaryTree.SymmetricalBinaryTree;
 
 public class Demo {
+    TreeServer server = new TreeServer();
     public static void main(String[] args) {
         Demo demo = new Demo();
-        Tree tree = demo.buildTree();
-        Tree tree1 = new Tree();
-        Node node = new Node(1);
-        tree1.root = node;
-        System.out.println(tree1.getDepth());
+        Tree tree = demo.buildTree();;
     }
 
     /*
@@ -44,12 +41,13 @@ public class Demo {
         node = new Node(8);
         node1.left.left= node;
         node.parent = node1.left;
-//        node = new Node(9);
-//        node1.left.right = node;
-//        node.parent = node1.left;
+        node = new Node(9);
+        node1.left.right = node;
+        node.parent = node1.left;
         node = new Node(10);
-        node2.right.right = node;
+        node1.right.left = node;
         node.parent = node2.right;
+        System.out.println(server.nextNode(node1).id);
         return tree;
     }
 
